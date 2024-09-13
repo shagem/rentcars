@@ -14,24 +14,41 @@
 
 <body class="font-poppins">
     <header class="lg:relative bg-right bg-contain bg-no-repeat max-lg:p-4">
-        <div class="bg-[url('./svgs/large_logo.svg')] absolute inset-0 bg-right bg-contain bg-no-repeat z-[-10]"></div>
+        <div class="max-lg:hidden bg-[url('./svgs/large_logo.svg')] absolute inset-0 bg-right bg-contain bg-no-repeat z-[-10]"></div>
         <nav class="lg:py-8">
             <div class="max-w-screen-lg mx-auto flex lg:items-center justify-between text-gray-700">
                 <a href="#" class="flex items-center text-primary font-semibold">
                     <svg class="h-8 w-8 mr-2" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_46_26130)"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8619 22.5344C11.6945 22.5344 10.5781 22.3138 9.55404 21.9102L5.87842 24.3015C7.88879 25.6047 10.2877 26.3609 12.8619 26.3609C17.6219 26.3609 21.7785 23.7753 24.0019 19.9319L20.6884 18.0177C19.125 20.7183 16.2056 22.5344 12.8619 22.5344Z" fill="#1572D3"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.27734 3.92239L8.06235 13.5009L4.27734 23.0776L10.2538 19.1888L19.0006 13.5009L10.2538 7.81114L4.27734 3.92239Z" fill="#1572D3"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8618 4.46554C16.2056 4.46554 19.1249 6.28167 20.6883 8.98229L24.0019 7.0681C21.7765 3.22462 17.6219 0.639038 12.8618 0.639038C10.2857 0.639038 7.88872 1.39529 5.87646 2.69845L9.55398 5.08978C10.578 4.6862 11.6926 4.46554 12.8618 4.46554Z" fill="#1572D3"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2.82885 21.5481L4.58274 17.1238L6.0198 13.499L4.58274 9.87621L2.82885 5.45187C1.05988 7.65461 0 10.4533 0 13.5009C0 16.5467 1.05988 19.3454 2.82885 21.5481Z" fill="#1572D3"/></g><defs><clipPath id="clip0_46_26130"><rect width="24.002" height="25.7219" fill="white" transform="translate(0 0.639038)"/></clipPath></defs></svg>
                     <span>RENTCARS</span>
                 </a>
-                <button class="lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#1572D3"><path d="M140-254.62v-50.25h680v50.25H140Zm0-200.25v-50.26h680v50.26H140Zm0-200.26v-50.25h680v50.25H140Z"/></svg>
+
+                <!-- Mobile menu button -->
+                <button id="menuBtn" class="lg:hidden fixed top-4 right-4 z-[51]">
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#1572D3">
+                        <path d="M140-254.62v-50.25h680v50.25H140Zm0-200.25v-50.26h680v50.26H140Zm0-200.26v-50.25h680v50.25H140Z"/>
+                    </svg>
                 </button>
-                <section class="hidden lg:flex gap-10 items-center">
-                    <a href="#" class="hover:decoration hover:underline">Become A Renter</a>
-                    <a href="#" class="hover:decoration hover:underline">Rental Deals</a>
-                    <a href="#" class="hover:decoration hover:underline">How It Works</a>
-                    <a href="#" class="hover:decoration hover:underline">Why Choose Us</a>
+                
+                <!-- Menu for mobile view -->
+                <section id="menu" class="fixed inset-0 bg-primary z-50 transition-transform duration-300 transform -translate-y-full opacity-0 flex flex-col items-center justify-center space-y-6 lg:hidden text-white">
+                    <a href="#" class="text-xl hover:underline">Become A Renter</a>
+                    <a href="#" class="text-xl hover:underline">Rental Deals</a>
+                    <a href="#" class="text-xl hover:underline">How It Works</a>
+                    <a href="#" class="text-xl hover:underline">Why Choose Us</a>
+                    <a href="#" class="text-xl hover:underline">My Account</a>
                 </section>
-                <section class="hidden lg:flex gap-8 items-center">
-                    <a href="#" class="hover:decoration hover:underline">Sign In</a>
+                
+                <!-- Menu for desktop view -->
+                <section class="hidden lg:flex gap-10 items-center">
+                    <a href="#" class="hover:underline">Become A Renter</a>
+                    <a href="#" class="hover:underline">Rental Deals</a>
+                    <a href="#" class="hover:underline">How It Works</a>
+                    <a href="#" class="hover:underline">Why Choose Us</a>
+                </section>
+                
+                <!-- Auth section -->
+                <section id="auth" class="hidden lg:flex gap-8 items-center">
+                    <a href="#" class="hover:underline">Sign In</a>
                     <a href="#" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition duration-300">Sign Up</a>
                 </section>
             </div>
@@ -109,40 +126,40 @@
             </div>
         </section>
         <!-- Why Choose Us -->
-        <section class="relative mt-28 pb-10">
+        <section class="relative mt-12 lg:mt-28 lg:pb-10">
             <div class="bg-[url('./svgs/main_background_vector.svg')] absolute inset-0 bg-left bg-contain bg-no-repeat z-[-10]"></div>
             <div class="hidden lg:block lg:absolute lg:top-1/4 lg:left-0 -z-[10]">
                 <img src="./src/imgs/main_car.png">
             </div>
             <div class="max-w-screen-xl mx-auto">
-                <div class="lg:w-2/4 flex flex-col ml-auto gap-6 bg-white p-4 rounded-lg max-lg:items-center">
+                <div class="lg:w-2/4 flex flex-col ml-auto gap-10 lg:gap-6 bg-white p-6 rounded-lg max-lg:items-center">
                     <p class="w-fit font-medium text-primary bg-primary bg-opacity-10 py-2 px-6 rounded-lg">WHY CHOOSE US</p>
                     <h3 class="text-4xl font-medium max-lg:text-center">We Offer First Class Experience<br/>Combined with Affordability</h3>
-                    <ul class="flex flex-col gap-8 max-lg:mt-10">
+                    <ul class="flex flex-col max-lg:items-center gap-8 max-lg:mt-6">
                         <li class="flex gap-4 items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="M136.41-187.69q-25.61 0-44.08-18.48-18.48-18.48-18.48-44.09v-405.89h50.25v405.89q0 4.62 3.85 8.46 3.85 3.85 8.46 3.85h630.51v50.26H136.41Zm120.51-120.52q-25.61 0-44.08-18.47-18.48-18.48-18.48-44.09v-342.05q0-25.61 18.48-44.09 18.47-18.47 44.08-18.47h566.67q25.61 0 44.08 18.47 18.48 18.48 18.48 44.09v342.05q0 25.61-18.48 44.09-18.47 18.47-44.08 18.47H256.92Zm69.75-50.25q0-34.13-24.01-58.09t-58.05-23.96v69.74q0 5 3.66 8.66 3.65 3.65 8.65 3.65h69.75Zm427.18 0h69.74q5 0 8.65-3.65 3.66-3.66 3.66-8.66v-69.74q-34.13 0-58.09 24.01t-23.96 58.04ZM540.26-441.8q41.92 0 70.96-29.03 29.03-29.04 29.03-70.96 0-41.93-29.03-70.96-29.04-29.04-70.96-29.04-41.93 0-70.96 29.04-29.04 29.03-29.04 70.96 0 41.92 29.04 70.96 29.03 29.03 70.96 29.03ZM244.61-643.08q34.13 0 58.09-24.01 23.97-24.01 23.97-58.04h-69.75q-5 0-8.65 3.66-3.66 3.65-3.66 8.65v69.74Zm591.29 0v-69.74q0-5-3.66-8.65-3.65-3.66-8.65-3.66h-69.74q0 34.13 24.01 58.09 24 23.96 58.04 23.96Z"/></svg>
-                            <div class="flex flex-col gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden lg:h-16 lg:w-16 lg:p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="M136.41-187.69q-25.61 0-44.08-18.48-18.48-18.48-18.48-44.09v-405.89h50.25v405.89q0 4.62 3.85 8.46 3.85 3.85 8.46 3.85h630.51v50.26H136.41Zm120.51-120.52q-25.61 0-44.08-18.47-18.48-18.48-18.48-44.09v-342.05q0-25.61 18.48-44.09 18.47-18.47 44.08-18.47h566.67q25.61 0 44.08 18.47 18.48 18.48 18.48 44.09v342.05q0 25.61-18.48 44.09-18.47 18.47-44.08 18.47H256.92Zm69.75-50.25q0-34.13-24.01-58.09t-58.05-23.96v69.74q0 5 3.66 8.66 3.65 3.65 8.65 3.65h69.75Zm427.18 0h69.74q5 0 8.65-3.65 3.66-3.66 3.66-8.66v-69.74q-34.13 0-58.09 24.01t-23.96 58.04ZM540.26-441.8q41.92 0 70.96-29.03 29.03-29.04 29.03-70.96 0-41.93-29.03-70.96-29.04-29.04-70.96-29.04-41.93 0-70.96 29.04-29.04 29.03-29.04 70.96 0 41.92 29.04 70.96 29.03 29.03 70.96 29.03ZM244.61-643.08q34.13 0 58.09-24.01 23.97-24.01 23.97-58.04h-69.75q-5 0-8.65 3.66-3.66 3.65-3.66 8.65v69.74Zm591.29 0v-69.74q0-5-3.66-8.65-3.65-3.66-8.65-3.66h-69.74q0 34.13 24.01 58.09 24 23.96 58.04 23.96Z"/></svg>
+                            <div class="flex flex-col gap-1 max-lg:text-center">
                                 <p class="text-xl">Best Price Guaranteed</p>
                                 <p class="text-gray-700">Find a lower price?  We'll refund you 100% of the difference</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="M572.82-455.64h171.79v-50.26H572.82v50.26Zm0-115.39h171.79v-50.25H572.82v50.25ZM215.39-333.85h292.3v-12.82q0-38.51-38.83-61.36-38.83-22.84-107.32-22.84t-107.32 22.84q-38.83 22.85-38.83 61.36v12.82Zm146.14-159.07q27.67 0 47.15-19.47 19.47-19.46 19.47-47.14 0-27.67-19.46-47.15-19.46-19.47-47.14-19.47t-47.15 19.46q-19.48 19.46-19.48 47.14t19.47 47.15q19.46 19.48 47.14 19.48ZM162.57-180q-25.79 0-44.18-18.39T100-242.57v-474.86q0-25.79 18.39-44.18T162.57-780h634.86q25.79 0 44.18 18.39T860-717.43v474.86q0 25.79-18.39 44.18T797.43-180H162.57Z"/></svg>
-                            <div class="flex flex-col gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden lg:h-16 lg:w-16 lg:p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="M572.82-455.64h171.79v-50.26H572.82v50.26Zm0-115.39h171.79v-50.25H572.82v50.25ZM215.39-333.85h292.3v-12.82q0-38.51-38.83-61.36-38.83-22.84-107.32-22.84t-107.32 22.84q-38.83 22.85-38.83 61.36v12.82Zm146.14-159.07q27.67 0 47.15-19.47 19.47-19.46 19.47-47.14 0-27.67-19.46-47.15-19.46-19.47-47.14-19.47t-47.15 19.46q-19.48 19.46-19.48 47.14t19.47 47.15q19.46 19.48 47.14 19.48ZM162.57-180q-25.79 0-44.18-18.39T100-242.57v-474.86q0-25.79 18.39-44.18T162.57-780h634.86q25.79 0 44.18 18.39T860-717.43v474.86q0 25.79-18.39 44.18T797.43-180H162.57Z"/></svg>
+                            <div class="flex flex-col gap-1 max-lg:text-center">
                                 <p class="text-xl">Experienced Drivers</p>
                                 <p class="text-gray-700">Don't have a driver? Don't worry, we have many experienced drivers for you</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="m626.36-296.62 36.61-36.61-156.36-157.04v-196.09h-50.25v216.62l170 173.12ZM480.07-100q-78.43 0-147.67-29.92-69.24-29.92-120.89-81.54-51.64-51.63-81.58-120.84Q100-401.51 100-479.93q0-78.43 29.92-147.67 29.92-69.24 81.54-120.89 51.63-51.64 120.84-81.58Q401.51-860 479.93-860q78.43 0 147.67 29.92 69.24 29.92 120.89 81.54 51.64 51.63 81.58 120.84Q860-558.49 860-480.07q0 78.43-29.92 147.67-29.92 69.24-81.54 120.89-51.63 51.64-120.84 81.58Q558.49-100 480.07-100Z"/></svg>
-                            <div class="flex flex-col gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden lg:h-16 lg:w-16 lg:p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="m626.36-296.62 36.61-36.61-156.36-157.04v-196.09h-50.25v216.62l170 173.12ZM480.07-100q-78.43 0-147.67-29.92-69.24-29.92-120.89-81.54-51.64-51.63-81.58-120.84Q100-401.51 100-479.93q0-78.43 29.92-147.67 29.92-69.24 81.54-120.89 51.63-51.64 120.84-81.58Q401.51-860 479.93-860q78.43 0 147.67 29.92 69.24 29.92 120.89 81.54 51.64 51.63 81.58 120.84Q860-558.49 860-480.07q0 78.43-29.92 147.67-29.92 69.24-81.54 120.89-51.63 51.64-120.84 81.58Q558.49-100 480.07-100Z"/></svg>
+                            <div class="flex flex-col gap-1 max-lg:text-center">
                                 <p class="text-xl">24/7 Delivery Service</p>
                                 <p class="text-gray-700">Book your car anytime and we will deliver it directly to you</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="M285.03-275.39q-13.56 0-24.68-11.32-11.12-11.33-11.12-25.14v-68.66h485.26l12.69 12.69V-720h69.74q13.55 0 24.47 11.33 10.92 11.32 10.92 25.54v548.87L711.18-275.39H285.03Zm-177.34-33.84v-514.31q0-13.8 10.92-25.13Q129.53-860 143.08-860h498.05q13.96 0 24.88 11.12 10.91 11.12 10.91 25.34v336.31q0 13.81-10.91 25.13-10.92 11.33-24.88 11.33h-391.9L107.69-309.23Z"/></svg>
-                            <div class="flex flex-col gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="max-lg:hidden lg:h-16 lg:w-16 lg:p-4 text-primary bg-primary bg-opacity-10 rounded-lg" viewBox="0 -960 960 960" fill="currentColor"><path d="M285.03-275.39q-13.56 0-24.68-11.32-11.12-11.33-11.12-25.14v-68.66h485.26l12.69 12.69V-720h69.74q13.55 0 24.47 11.33 10.92 11.32 10.92 25.54v548.87L711.18-275.39H285.03Zm-177.34-33.84v-514.31q0-13.8 10.92-25.13Q129.53-860 143.08-860h498.05q13.96 0 24.88 11.12 10.91 11.12 10.91 25.34v336.31q0 13.81-10.91 25.13-10.92 11.33-24.88 11.33h-391.9L107.69-309.23Z"/></svg>
+                            <div class="flex flex-col gap-1 max-lg:text-center">
                                 <p class="text-xl">24/7 Technical Support</p>
                                 <p class="text-gray-700">Have a question? Contact Rentcars support anytime when you have a problem</p>
                             </div>
@@ -300,15 +317,15 @@
             <a href="#" class="group w-fit py-2 px-8 border border-gray-500 rounded-lg mt-12 align-middle hover:bg-gray-500 hover:text-white transition duration-300">Show all vehicles<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline ml-1" viewBox="0 -960 960 960" fill="currentColor"><path d="m593.46-213.46-35.33-35 206.79-206.8H100v-50.25h665.31l-206.85-206.8 35-35 266.92 266.93-266.92 266.92Z"/></svg></a>
         </section>
         <!-- Testimonials -->
-        <section class="relative flex flex-col items-center mt-20 pt-20 pb-28 bg-primary-light">
+        <section class="relative flex flex-col items-center mt-20 pt-20 pb-28 px-6 bg-primary-light">
             <img class="hidden lg:block absolute top-0 right-28" src="./src/svgs/quote_mark_down.svg">
             <img class="hidden lg:block absolute top-20 left-28" src="./src/svgs/quote_mark_up.svg">
             <p class="w-fit font-medium text-primary bg-primary bg-opacity-10 py-2 px-6 rounded-lg">TESTIMONIALS</p>
             <h5 class="text-4xl font-medium mt-10 text-center">What do people have to say about us?</h5>
             <!-- Review Cards -->
-            <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 mt-16 gap-4">
-                <div class="h-[250px] w-fit grid grid-cols-2 rounded-lg bg-white drop-shadow-lg">
-                    <div class="bg-[url(./imgs/headshot_1.png)] bg-center bg-cover bg-no-repeat rounded-l-lg"></div>
+            <div class="max-w-screen-xl mx-auto flex flex-col lg:grid lg:grid-cols-2 mt-16 px-6 gap-8 lg:gap-4 max-lg:items-center">
+                <div class="lg:h-[250px] max-lg:max-w-[300px] w-fit grid grid-cols-1 lg:grid-cols-2 rounded-lg bg-white drop-shadow-lg">
+                    <div class="max-lg:h-[250px] bg-[url(./imgs/headshot_1.png)] bg-center bg-cover bg-no-repeat rounded-t-lg lg:rounded-l-lg"></div>
                     <div class="flex flex-col py-4 px-6">
                         <p class=""><span class="text-3xl">5.0</span> stars</p>
                         <!-- 5 Stars -->
@@ -320,8 +337,8 @@
                         <p class="text-xs text-gray-400">New York, NY</p>
                     </div>
                 </div>
-                <div class="h-[250px] w-fit grid grid-cols-2 rounded-lg bg-white drop-shadow-lg">
-                    <div class="bg-[url(./imgs/headshot_3.jpg)] bg-center bg-cover bg-no-repeat rounded-l-lg"></div>
+                <div class="lg:h-[250px] max-lg:max-w-[300px] w-fit grid grid-cols-1 lg:grid-cols-2 rounded-lg bg-white drop-shadow-lg">
+                    <div class="max-lg:h-[250px] bg-[url(./imgs/headshot_3.jpg)] bg-center bg-cover bg-no-repeat rounded-t-lg lg:rounded-l-lg"></div>
                     <div class="flex flex-col py-4 px-6">
                         <p class=""><span class="text-3xl">5.0</span> stars</p>
                         <!-- 5 Stars -->
@@ -333,8 +350,8 @@
                         <p class="text-xs text-gray-400">Portland, OR</p>
                     </div>
                 </div>
-                <div class="h-[250px] w-fit grid grid-cols-2 rounded-lg bg-white drop-shadow-lg">
-                    <div class="bg-[url(./imgs/headshot_2.jpg)] bg-center bg-cover bg-no-repeat rounded-l-lg"></div>
+                <div class="lg:h-[250px] max-lg:max-w-[300px] w-fit grid grid-cols-1 lg:grid-cols-2 rounded-lg bg-white drop-shadow-lg">
+                    <div class="max-lg:h-[250px] bg-[url(./imgs/headshot_2.jpg)] bg-center bg-cover bg-no-repeat rounded-t-lg lg:rounded-l-lg"></div>
                     <div class="flex flex-col py-4 px-6">
                         <p class=""><span class="text-3xl">5.0</span> stars</p>
                         <!-- 5 Stars -->
@@ -346,8 +363,8 @@
                         <p class="text-xs text-gray-400">Charlotte, NC</p>
                     </div>
                 </div>
-                <div class="h-[250px] w-fit grid grid-cols-2 rounded-lg bg-white drop-shadow-lg">
-                    <div class="bg-[url(./imgs/headshot_4.jpg)] bg-center bg-cover bg-no-repeat rounded-l-lg"></div>
+                <div class="lg:h-[250px] max-lg:max-w-[300px] w-fit grid grid-cols-1 lg:grid-cols-2 rounded-lg bg-white drop-shadow-lg">
+                    <div class="max-lg:h-[250px] bg-[url(./imgs/headshot_4.jpg)] bg-center bg-cover bg-no-repeat rounded-t-lg lg:rounded-l-lg"></div>
                     <div class="flex flex-col py-4 px-6">
                         <p class=""><span class="text-3xl">5.0</span> stars</p>
                         <!-- 5 Stars -->
@@ -362,11 +379,11 @@
             </div>
         </section>
         <!-- Download -->
-        <section class="relative py-40">
-            <div class="bg-[url('./svgs/main_background_vector.svg')] absolute top-0 left-0 right-0 bottom-0 bg-left bg-contain bg-no-repeat z-[-10] -mt-8"></div>
-            <div class="max-w-screen-lg mx-auto">
+        <section class="relative py-12 lg:py-40 px-6">
+            <div class="max-lg:hidden bg-[url('./svgs/main_background_vector.svg')] absolute top-0 left-0 right-0 bottom-0 bg-left bg-contain bg-no-repeat z-[-10] -mt-8"></div>
+            <div class="max-w-screen-lg mx-auto flex flex-col max-lg:items-center max-lg:text-center">
                 <p class="w-fit font-medium text-primary bg-primary bg-opacity-10 py-2 px-6 rounded-lg">DOWNLOAD</p>
-                <h6 class="text-4xl font-medium mt-4">Download Rentcars <br/>App for <span class="text-primary">FREE</span></h6>
+                <h6 class="text-4xl font-semibold mt-4">Download Rentcars <br/>App for <span class="text-primary">FREE</span></h6>
                 <p class="text-gray-700 mt-4">For faster, easier booking and exclusive deals.</p>
                 <div class="flex gap-2 mt-6">
                     <a href="#"><img src="./src/svgs/google_play_badge.svg"></a>
@@ -378,8 +395,8 @@
     </main>
     <footer class="bg-secondary py-10 text-white">
         <section class="px-6">
-            <div class="max-w-screen-xl mx-auto grid grid-cols-6">
-                <div class="col-span-2 flex flex-col gap-6">
+            <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-6 max-lg:gap-8">
+                <div class="lg:col-span-2 flex flex-col gap-4 lg:gap-6">
                     <a href="#" class="w-fit flex items-center font-semibold">
                         <svg class="h-8 w-8 mr-2" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_46_26130)"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8619 22.5344C11.6945 22.5344 10.5781 22.3138 9.55404 21.9102L5.87842 24.3015C7.88879 25.6047 10.2877 26.3609 12.8619 26.3609C17.6219 26.3609 21.7785 23.7753 24.0019 19.9319L20.6884 18.0177C19.125 20.7183 16.2056 22.5344 12.8619 22.5344Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.27734 3.92239L8.06235 13.5009L4.27734 23.0776L10.2538 19.1888L19.0006 13.5009L10.2538 7.81114L4.27734 3.92239Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8618 4.46554C16.2056 4.46554 19.1249 6.28167 20.6883 8.98229L24.0019 7.0681C21.7765 3.22462 17.6219 0.639038 12.8618 0.639038C10.2857 0.639038 7.88872 1.39529 5.87646 2.69845L9.55398 5.08978C10.578 4.6862 11.6926 4.46554 12.8618 4.46554Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2.82885 21.5481L4.58274 17.1238L6.0198 13.499L4.58274 9.87621L2.82885 5.45187C1.05988 7.65461 0 10.4533 0 13.5009C0 16.5467 1.05988 19.3454 2.82885 21.5481Z" fill="white"/></g><defs><clipPath id="clip0_46_26130"><rect width="24.002" height="25.7219" fill="white" transform="translate(0 0.639038)"/></clipPath></defs></svg>
                         <span>RENTCARS</span>
@@ -405,7 +422,7 @@
                         <p class="text-sm">info@rentcars.com</p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2 lg:gap-6">
                     <p>Our Product</p>
                     <div class="flex flex-col gap-2 text-sm text-gray-300">
                         <a class="hover:decoration hover:underline w-fit" href="#">Career</a>
@@ -415,7 +432,7 @@
                         <a class="hover:decoration hover:underline w-fit" href="#">Priceline</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2 lg:gap-6">
                     <p>Resources</p>
                     <div class="flex flex-col gap-2 text-sm text-gray-300">
                         <a class="hover:decoration hover:underline w-fit" href="#">Download</a>
@@ -426,7 +443,7 @@
                         <a class="hover:decoration hover:underline w-fit" href="#">Developer</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2 lg:gap-6">
                     <p>About RentCars</p>
                     <div class="flex flex-col gap-2 text-sm text-gray-300">
                         <a class="hover:decoration hover:underline w-fit" href="#">Why Choose Us</a>
@@ -436,19 +453,19 @@
                         <a class="hover:decoration hover:underline w-fit" href="#">Advertise</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2 lg:gap-6">
                     <p>Follow Us</p>
                     <div class="flex gap-2">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="hover:cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#D1D5DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z" stroke="#D1D5DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M17.6361 7H17.6477" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="hover:cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 9.3V12.2H16.6C16.8 12.2 16.9 12.4 16.9 12.6L16.5 14.5C16.5 14.6 16.3 14.7 16.2 14.7H14V22H11V14.8H9.3C9.1 14.8 9 14.7 9 14.5V12.6C9 12.4 9.1 12.3 9.3 12.3H11V9C11 7.3 12.3 6 14 6H16.7C16.9 6 17 6.1 17 6.3V8.7C17 8.9 16.9 9 16.7 9H14.3C14.1 9 14 9.1 14 9.3Z" stroke="#D1D5DB" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
                             <path d="M15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H15C20 2 22 4 22 9V15C22 20 20 22 15 22Z" stroke="#D1D5DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="hover:cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17 20H7C4 20 2 18 2 15V9C2 6 4 4 7 4H17C20 4 22 6 22 9V15C22 18 20 20 17 20Z" stroke="#D1D5DB" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M11.4001 9.49981L13.9001 10.9998C14.8001 11.5998 14.8001 12.4998 13.9001 13.0998L11.4001 14.5998C10.4001 15.1998 9.6001 14.6998 9.6001 13.5998V10.5998C9.6001 9.29981 10.4001 8.89981 11.4001 9.49981Z" stroke="#D1D5DB" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>                            
