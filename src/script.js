@@ -1,10 +1,10 @@
 (() => {
   // input.js
   document.getElementById("menuBtn").addEventListener("click", function() {
-    var menu = document.getElementById("menu");
-    var body = document.body;
-    var menuIcon = document.getElementById("menuIcon");
-    var isMenuVisible = menu.classList.contains("translate-y-0");
+    let menu = document.getElementById("menu");
+    let body = document.body;
+    let menuIcon = document.getElementById("menuIcon");
+    let isMenuVisible = menu.classList.contains("translate-y-0");
     if (isMenuVisible) {
       menu.classList.remove("translate-y-0", "opacity-100");
       menu.classList.add("-translate-y-full", "opacity-0");
